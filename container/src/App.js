@@ -1,10 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-/* import About from "about/about";
-import Home from "home/home"; */
-
-const About = React.lazy(() => import("about/about"));
-const Home = React.lazy(() => import("home/home"));
+import About from "about/about";
+import Home from "home/home";
 
 export default function App() {
   return (
@@ -22,14 +19,10 @@ export default function App() {
         <hr></hr>
         <Switch>
           <Route path="/about">
-            <Suspense fallback={"loading"}>
-              <About />
-            </Suspense>
+            <About />
           </Route>
           <Route path="/home">
-            <Suspense fallback={"loading"}>
-              <Home />
-            </Suspense>
+            <Home />
           </Route>
         </Switch>
       </Router>
